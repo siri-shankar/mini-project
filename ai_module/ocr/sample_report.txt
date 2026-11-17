@@ -1,0 +1,5 @@
+Patient Name: Test Patient
+Age: 25
+Symptoms: Fever and headache
+Duration: 3 days
+Medicine: Paracetamol 500 mg
