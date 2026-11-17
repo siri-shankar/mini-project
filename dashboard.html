@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediKiosk | Patient Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">+</span>
+            <span>Medi<span class="logo-highlight">Kiosk</span></span>
+        </a>
+
+        <div class="nav-right">
+            <span class="patient-label">Patient Portal</span>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div>
+                <p class="welcome-small">PATIENT DASHBOARD</p>
+                <h1>Welcome to MediKiosk!</h1>
+                <p class="welcome-description">
+                    Your healthcare information, all in one place.
+                </p>
+            </div>
+
+            <div class="welcome-icon">✚</div>
+        </section>
+
+        <!-- Profile Card -->
+        <section class="profile-card">
+            <div class="profile-avatar">P</div>
+
+            <div class="profile-details">
+                <h2>Patient Profile</h2>
+                <p>Your registration process is complete.</p>
+                <span class="status-label">● Registration Completed</span>
+            </div>
+
+            <div class="profile-note">
+                <span>🔒</span>
+                <p>Your medical information should remain private and secure.</p>
+            </div>
+        </section>
+
+        <!-- Section Heading -->
+        <section class="section-heading">
+            <div>
+                <h2>Your Healthcare Services</h2>
+                <p>Select a service to continue.</p>
+            </div>
+        </section>
+
+        <!-- Dashboard Cards -->
+        <section class="services-grid">
+
+            <article class="service-card">
+                <div class="service-icon icon-blue">📋</div>
+                <h3>Medical History</h3>
+                <p>
+                    Provide information about your symptoms,
+                    previous illnesses and medical history.
+                </p>
+                <button class="service-btn" data-service="Medical History">
+                    Start Medical History →
+                </button>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon icon-teal">🤖</div>
+                <h3>AI Health Assistant</h3>
+                <p>
+                    Answer guided questions to help organize
+                    your health information.
+                </p>
+                <button class="service-btn" data-service="AI Health Assistant">
+                    Open AI Assistant →
+                </button>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon icon-purple">📁</div>
+                <h3>Upload Documents</h3>
+                <p>
+                    Upload previous prescriptions, reports
+                    and other medical documents.
+                </p>
+                <button class="service-btn" data-service="Upload Medical Documents">
+                    Upload Documents →
+                </button>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon icon-orange">📄</div>
+                <h3>Medical Summary</h3>
+                <p>
+                    View your organized medical history
+                    and AI-generated draft summary.
+                </p>
+                <button class="service-btn" data-service="Medical Summary">
+                    View Summary →
+                </button>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon icon-green">🩺</div>
+                <h3>Doctor Review</h3>
+                <p>
+                    Check the review status of your
+                    medical information by a doctor.
+                </p>
+                <button class="service-btn" data-service="Doctor Review">
+                    Check Review Status →
+                </button>
+            </article>
+
+            <article class="service-card help-card">
+                <div class="service-icon icon-pink">💬</div>
+                <h3>Help & Support</h3>
+                <p>
+                    Get guidance on using MediKiosk
+                    and understanding its features.
+                </p>
+                <button class="service-btn" data-service="Help and Support">
+                    Get Help →
+                </button>
+            </article>
+
+        </section>
+
+        <!-- Information Notice -->
+        <section class="notice-section">
+            <span class="notice-icon">ℹ️</span>
+            <div>
+                <h3>Important Information</h3>
+                <p>
+                    MediKiosk helps organize patient-provided information.
+                    AI-generated summaries are drafts and must be reviewed
+                    by a qualified healthcare professional. They are not
+                    a substitute for medical diagnosis or emergency care.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 MediKiosk. All rights reserved.</p>
+        <p>Making healthcare information accessible.</p>
+    </footer>
+
+    <!-- Message popup -->
+    <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

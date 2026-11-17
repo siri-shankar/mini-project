@@ -1,0 +1,454 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f8fc;
+    color: #243247;
+}
+
+/* Navigation */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    color: #173d67;
+}
+
+.logo-icon {
+    background: #087f9c;
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 27px;
+}
+
+.logo-highlight {
+    color: #078ca0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.patient-label {
+    color: #60758a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background: white;
+    border: 1px solid #078ca0;
+    color: #078ca0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #078ca0;
+    color: white;
+}
+
+/* Main Container */
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+/* Welcome Section */
+
+.welcome-section {
+    background: linear-gradient(120deg, #075985, #0799a6);
+    color: white;
+    padding: 35px 40px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.welcome-small {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 12px;
+}
+
+.welcome-section h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-description {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.welcome-icon {
+    font-size: 75px;
+    background: rgba(255, 255, 255, 0.13);
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Profile Card */
+
+.profile-card {
+    background: white;
+    padding: 22px 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(20, 50, 80, 0.04);
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-avatar {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    background: #dff4f6;
+    color: #087f9c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.profile-details p {
+    font-size: 13px;
+    color: #728196;
+    margin-bottom: 9px;
+}
+
+.status-label {
+    color: #13875c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f9fb;
+    border-radius: 10px;
+    padding: 12px;
+    max-width: 250px;
+}
+
+.profile-note span {
+    font-size: 22px;
+}
+
+.profile-note p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #587184;
+}
+
+/* Section Heading */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: #728196;
+    font-size: 14px;
+}
+
+/* Service Cards */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e9f0f5;
+    transition: transform 0.25s, box-shadow 0.25s;
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(15, 60, 90, 0.09);
+}
+
+.service-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.icon-blue {
+    background: #e6f1ff;
+}
+
+.icon-teal {
+    background: #e0f7f5;
+}
+
+.icon-purple {
+    background: #f0eaff;
+}
+
+.icon-orange {
+    background: #fff0df;
+}
+
+.icon-green {
+    background: #e4f7ed;
+}
+
+.icon-pink {
+    background: #ffeaf1;
+}
+
+.service-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #728196;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.service-btn {
+    border: none;
+    background: transparent;
+    color: #078ca0;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.service-btn:hover {
+    color: #075985;
+}
+
+/* Notice */
+
+.notice-section {
+    display: flex;
+    gap: 15px;
+    background: #eaf5fa;
+    border-left: 4px solid #078ca0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 35px;
+}
+
+.notice-icon {
+    font-size: 24px;
+}
+
+.notice-section h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #075985;
+}
+
+.notice-section p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #526b7d;
+}
+
+/* Footer */
+
+.footer {
+    background: white;
+    padding: 22px;
+    text-align: center;
+    color: #728196;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* Popup Message */
+
+.message-box {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: #173d67;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 9px;
+    font-size: 13px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 10;
+    width: max-content;
+    max-width: 90%;
+    text-align: center;
+}
+
+.message-box.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-note {
+        max-width: 100%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .patient-label {
+        display: none;
+    }
+
+    .logout-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .dashboard-container {
+        padding: 22px 15px;
+    }
+
+    .welcome-section {
+        padding: 25px 20px;
+    }
+
+    .welcome-section h1 {
+        font-size: 23px;
+    }
+
+    .welcome-description {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .welcome-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 38px;
+    }
+
+    .profile-card {
+        padding: 18px;
+        gap: 13px;
+    }
+
+    .profile-avatar {
+        width: 52px;
+        height: 52px;
+    }
+
+    .profile-details h2 {
+        font-size: 16px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .service-card {
+        min-height: 220px;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+}

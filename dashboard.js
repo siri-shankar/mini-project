@@ -1,0 +1,52 @@
+
+const logoutBtn = document.getElementById("logoutBtn");
+const serviceButtons = document.querySelectorAll(".service-btn");
+const messageBox = document.getElementById("messageBox");
+
+// Show a message when a service is selected
+function showMessage(message) {
+    messageBox.textContent = message;
+    messageBox.classList.add("show");
+
+    setTimeout(() => {
+        messageBox.classList.remove("show");
+    }, 3000);
+}
+
+// Handle service buttons
+// Handle service buttons
+serviceButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const serviceName = this.dataset.service;
+
+        if (serviceName === "Medical History") {
+
+            window.location.href = "history.html";
+
+        } else {
+
+            showMessage(
+                serviceName +
+                " will be available after we build and connect this module."
+            );
+
+        }
+
+    });
+
+});
+
+// Logout button
+logoutBtn.addEventListener("click", function () {
+
+    const confirmLogout = confirm(
+        "Are you sure you want to return to the homepage?"
+    );
+
+    if (confirmLogout) {
+        window.location.href = "index.html";
+    }
+
+});

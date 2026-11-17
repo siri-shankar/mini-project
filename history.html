@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediKiosk | Medical History</title>
+
+    <link rel="stylesheet" href="history.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">+</span>
+            <span>Medi<span class="logo-highlight">Kiosk</span></span>
+        </a>
+
+        <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+    </header>
+
+    <main class="container">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <p class="eyebrow">PATIENT HEALTH INFORMATION</p>
+            <h1>Medical History</h1>
+            <p>
+                Help us understand your health better by answering
+                the following questions.
+            </p>
+        </section>
+
+        <!-- Language Selection -->
+        <section class="language-card">
+            <div>
+                <h3>🌐 Choose Your Preferred Language</h3>
+                <p>Questions and instructions will change based on your selection.</p>
+            </div>
+
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                <option value="hi">हिन्दी (Hindi)</option>
+            </select>
+        </section>
+
+        <!-- Progress -->
+        <div class="progress-card">
+            <div class="progress-heading">
+                <span id="progressText">Section 1 of 6</span>
+                <span id="progressPercent">0% completed</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- Medical History Form -->
+        <form id="historyForm" novalidate>
+
+            <!-- SECTION 1 -->
+            <section class="form-section">
+                <div class="section-title">
+                    <span class="section-number">01</span>
+                    <div>
+                        <h2 data-i18n="symptomTitle">Current Symptoms</h2>
+                        <p data-i18n="symptomDescription">
+                            Tell us about the health problems you are experiencing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="symptoms" data-i18n="symptomsLabel">
+                        What symptoms are you experiencing? *
+                    </label>
+
+                    <textarea
+                        id="symptoms"
+                        name="symptoms"
+                        rows="4"
+                        required
+                        placeholder="Example: Headache, fever, cough..."
+                    ></textarea>
+                    <small class="hint" data-i18n="symptomsHint">
+                        Describe your symptoms in your own words.
+                    </small>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="duration" data-i18n="durationLabel">
+                            How long have you had these symptoms? *
+                        </label>
+
+                        <select id="duration" name="duration" required>
+                            <option value="" data-i18n="selectOption">Select duration</option>
+                            <option value="Less than a day">Less than a day</option>
+                            <option value="1-3 days">1–3 days</option>
+                            <option value="4-7 days">4–7 days</option>
+                            <option value="1-4 weeks">1–4 weeks</option>
+                            <option value="More than a month">More than a month</option>
+                            <option value="Comes and goes">Comes and goes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="severity" data-i18n="severityLabel">
+                            How severe are your symptoms? *
+                        </label>
+
+                        <select id="severity" name="severity" required>
+                            <option value="" data-i18n="selectOption">Select severity</option>
+                            <option value="Mild">Mild</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Severe">Severe</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="symptomNotes" data-i18n="symptomNotesLabel">
+                        Anything else you want to mention?
+                    </label>
+
+                    <textarea
+                        id="symptomNotes"
+                        name="symptomNotes"
+                        rows="3"
+                        placeholder="When do symptoms occur? What makes them better or worse?"
+                    ></textarea>
+                </div>
+            </section>
+
+            <!-- SECTION 2 -->
+            <section class="form-section">
+                <div class="section-title">
+                    <span class="section-number">02</span>
+                    <div>
+                        <h2 data-i18n="pastTitle">Past Medical History</h2>
+                        <p data-i18n="pastDescription">
+                            Tell us about any previous health conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="pastQuestion">
+                        Have you ever been diagnosed with any medical conditions?
+                    </label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="pastCondition" value="Yes" required>
+                            <span data-i18n="yes">Yes</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="pastCondition" value="No">
+                            <span data-i18n="no">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pastDetails" data-i18n="pastDetailsLabel">
+                        If yes, please mention the conditions.
+                    </label>
+
+                    <textarea
+                        id="pastDetails"
+                        name="pastDetails"
+                        rows="3"
+                        placeholder="Example: Diabetes, asthma, hypertension..."
+                    ></textarea>
+                </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <section class="form-section">
+                <div class="section-title">
+                    <span class="section-number">03</span>
+                    <div>
+                        <h2 data-i18n="surgeryTitle">Previous Surgeries</h2>
+                        <p data-i18n="surgeryDescription">
+                            Let us know about any surgeries you have undergone.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="surgeryQuestion">
+                        Have you undergone any surgeries?
+                    </label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="surgery" value="Yes" required>
+                            <span data-i18n="yes">Yes</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="surgery" value="No">
+                            <span data-i18n="no">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="surgeryDetails" data-i18n="surgeryDetailsLabel">
+                        If yes, mention the surgery and approximate year.
+                    </label>
+
+                    <textarea
+                        id="surgeryDetails"
+                        name="surgeryDetails"
+                        rows="3"
+                        placeholder="Example: Appendix surgery, 2022"
+                    ></textarea>
+                </div>
+            </section>
+
+            <!-- SECTION 4 -->
+            <section class="form-section">
+                <div class="section-title">
+                    <span class="section-number">04</span>
+                    <div>
+                        <h2 data-i18n="medicationTitle">Current Medications</h2>
+                        <p data-i18n="medicationDescription">
+                            Tell us about the medicines you currently take.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="medicationQuestion">
+                        Are you currently taking any medicines?
+                    </label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="medication" value="Yes" required>
+                            <span data-i18n="yes">Yes</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="medication" value="No">
+                            <span data-i18n="no">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="medicationDetails" data-i18n="medicationDetailsLabel">
+                        If yes, mention medicine names and dosage if known.
+                    </label>
+
+                    <textarea
+                        id="medicationDetails"
+                        name="medicationDetails"
+                        rows="3"
+                        placeholder="Example: Medicine name, dosage and frequency"
+                    ></textarea>
+                </div>
+            </section>
+
+            <!-- SECTION 5 -->
+            <section class="form-section">
+                <div class="section-title">
+                    <span class="section-number">05</span>
+                    <div>
+                        <h2 data-i18n="allergyTitle">Allergies</h2>
+                        <p data-i18n="allergyDescription">
+                            Let us know if you have any known allergies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="allergyQuestion">
+                        Do you have any known allergies?
+                    </label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="allergy" value="Yes" required>
+                            <span data-i18n="yes">Yes</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="allergy" value="No">
+                            <span data-i18n="no">No</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="allergy" value="Not sure">
+                            <span data-i18n="notSure">Not sure</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="allergyDetails" data-i18n="allergyDetailsLabel">
+                        If yes, mention the allergy and any reaction you have experienced.
+                    </label>
+
+                    <textarea
+                        id="allergyDetails"
+                        name="allergyDetails"
+                        rows="3"
+                        placeholder="Example: Penicillin - skin rash"
+                    ></textarea>
+                </div>
+            </section>
+
+            <!-- SECTION 6 -->
+            <section class="form-section">
+                <div class="section-title">
+                    <span class="section-number">06</span>
+                    <div>
+                        <h2 data-i18n="familyTitle">Family Medical History</h2>
+                        <p data-i18n="familyDescription">
+                            Tell us about relevant health conditions in your family.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="familyQuestion">
+                        Are there any known medical conditions in your family?
+                    </label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="familyHistory" value="Yes" required>
+                            <span data-i18n="yes">Yes</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="familyHistory" value="No">
+                            <span data-i18n="no">No</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="familyHistory" value="Not sure">
+                            <span data-i18n="notSure">Not sure</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="familyDetails" data-i18n="familyDetailsLabel">
+                        If yes, mention the condition and family member.
+                    </label>
+
+                    <textarea
+                        id="familyDetails"
+                        name="familyDetails"
+                        rows="3"
+                        placeholder="Example: Father - diabetes, Mother - hypertension"
+                    ></textarea>
+                </div>
+            </section>
+
+            <!-- Consent -->
+            <section class="consent-card">
+                <label class="consent-label">
+                    <input type="checkbox" id="historyConsent" required>
+
+                    <span data-i18n="consentText">
+                        I confirm that the information provided is accurate
+                        to the best of my knowledge and consent to its use
+                        for the stated healthcare purpose. *
+                    </span>
+                </label>
+            </section>
+
+            <p class="form-error" id="formError" role="alert"></p>
+
+            <!-- Form Buttons -->
+            <div class="form-actions">
+                <a href="dashboard.html" class="secondary-btn">
+                    ← Back to Dashboard
+                </a>
+
+                <button type="submit" class="primary-btn" id="reviewButton">
+                    Review My Answers →
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Review Section -->
+        <section id="reviewSection" class="review-section" hidden>
+
+            <div class="review-heading">
+                <span class="review-icon">✓</span>
+                <div>
+                    <h2 data-i18n="reviewTitle">Review Your Medical History</h2>
+                    <p data-i18n="reviewDescription">
+                        Please check your answers before submitting.
+                    </p>
+                </div>
+            </div>
+
+            <div id="reviewContent" class="review-content"></div>
+
+            <div class="review-notice">
+                Please make sure all the information is correct.
+                You can go back and edit your answers if necessary.
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="secondary-btn" id="editButton">
+                    ← Edit Answers
+                </button>
+
+                <button type="button" class="primary-btn" id="submitButton">
+                    Confirm & Submit
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Success Section -->
+        <section id="successSection" class="success-section" hidden>
+            <div class="success-icon">✓</div>
+
+            <h2 data-i18n="successTitle">
+                Medical History Submitted!
+            </h2>
+
+            <p data-i18n="successDescription">
+                Your answers have been submitted in this frontend demonstration.
+            </p>
+
+            <p class="demo-warning">
+                Demo only: Your information has not been saved to a secure
+                patient database or sent to a doctor.
+            </p>
+
+            <a href="dashboard.html" class="primary-btn">
+                Return to Dashboard →
+            </a>
+        </section>
+
+        <section class="medical-notice">
+            <strong>Important:</strong>
+            This form collects information for documentation. It does not
+            provide a medical diagnosis. If you think you are experiencing
+            a medical emergency, seek immediate medical assistance.
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        © 2026 MediKiosk. Making healthcare information accessible.
+    </footer>
+
+    <script src="history.js"></script>
+
+</body>
+</html>
