@@ -37,6 +37,9 @@ serviceButtons.forEach(button => {
         else if (serviceName === "Doctor Review") {
             window.location.href = "doctor-review.html";
         }
+        else if (serviceName === "Help & Support") {
+            window.location.href = "help.html";
+        }
         else {
             showMessage(
                 serviceName +

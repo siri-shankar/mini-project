@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediKiosk | Help & Support</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="dashboard.html" class="logo">
+        Medi<span>Kiosk</span>
+    </a>
+
+    <a href="dashboard.html" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</header>
+
+<main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-icon">💬</div>
+        <h1>How can we help you?</h1>
+        <p>
+            Find answers to your questions and learn how to use MediKiosk.
+        </p>
+
+        <div class="search-box">
+            <span>🔍</span>
+            <input
+                type="search"
+                id="faqSearch"
+                placeholder="Search your questions..."
+                aria-label="Search frequently asked questions"
+            >
+        </div>
+    </section>
+
+    <!-- QUICK HELP -->
+    <section class="quick-help">
+        <h2>What do you need help with?</h2>
+
+        <div class="quick-grid">
+            <a href="#registration" class="quick-card">
+                <span>👤</span>
+                <h3>Registration</h3>
+                <p>Patient registration help</p>
+            </a>
+
+            <a href="#medical-history" class="quick-card">
+                <span>📋</span>
+                <h3>Medical History</h3>
+                <p>Entering health details</p>
+            </a>
+
+            <a href="#documents" class="quick-card">
+                <span>📁</span>
+                <h3>Documents</h3>
+                <p>Uploading medical reports</p>
+            </a>
+
+            <a href="#doctor-review" class="quick-card">
+                <span>🩺</span>
+                <h3>Doctor Review</h3>
+                <p>Understanding review status</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section" id="faqs">
+        <div class="section-heading">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions.</p>
+        </div>
+
+        <div id="faqList">
+
+            <div class="faq-item" id="registration">
+                <button class="faq-question" type="button">
+                    How do I register as a patient?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Open the MediKiosk homepage and click Get Started.
+                        Enter your personal details, choose your preferred
+                        language and provide the required consent. Complete
+                        the form to continue to the dashboard.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Can I enter my name in Kannada or Hindi?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Yes. The registration form supports names written
+                        using different languages. You can type using a
+                        suitable language keyboard or copy and paste your name.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="medical-history">
+                <button class="faq-question" type="button">
+                    How do I submit my medical history?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Open Medical History from your dashboard. Enter your
+                        current symptoms, duration, severity, past conditions,
+                        surgeries, medications and allergies. Review your
+                        answers before confirming.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="documents">
+                <button class="faq-question" type="button">
+                    Which documents can I upload?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        The current demonstration supports PDF, JPG, JPEG
+                        and PNG files. Follow the file-size and file-count
+                        limits displayed on the upload page.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Can I remove a document after selecting it?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Yes. Before submitting the upload form, use the
+                        Remove option next to a selected file.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    What does the AI Health Assistant do?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        The current demonstration asks predefined questions
+                        to collect health information. It does not diagnose
+                        illnesses or recommend treatment. AI functionality
+                        will be integrated separately.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Is the AI-generated medical summary final?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        No. An AI-generated summary is only a draft.
+                        A qualified doctor must independently verify the
+                        information before making clinical decisions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="doctor-review">
+                <button class="faq-question" type="button">
+                    How can I check my doctor review status?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Open Medical Summary and check the Doctor Review
+                        section. The current demonstration shows sample
+                        review information. Real review status will require
+                        backend and database integration.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Is my medical information saved permanently?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        The current frontend demonstration does not
+                        permanently save patient information or documents.
+                        Secure backend and database integration is still
+                        required.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    What should I do if a page is not working?
+                    <span>＋</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Check your internet connection if applicable,
+                        refresh the page and try again. If the issue
+                        continues, contact the hospital help desk or
+                        project support team.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="noResults" class="no-results hidden">
+            No matching questions found. Try another search.
+        </p>
+    </section>
+
+    <!-- HOW TO USE -->
+    <section class="section">
+        <div class="section-heading">
+            <h2>How to Use MediKiosk</h2>
+            <p>Follow these simple steps.</p>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">01</div>
+                <div>
+                    <h3>Patient Registration</h3>
+                    <p>
+                        Enter your basic details and provide the required consent.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div>
+                    <h3>Complete Medical History</h3>
+                    <p>
+                        Provide information about symptoms, previous conditions,
+                        medications and allergies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div>
+                    <h3>Upload Medical Documents</h3>
+                    <p>
+                        Select available reports and prescriptions in supported
+                        file formats.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <div>
+                    <h3>AI Health Assistant</h3>
+                    <p>
+                        Answer the guided questions to provide additional
+                        health information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">05</div>
+                <div>
+                    <h3>Medical Summary</h3>
+                    <p>
+                        View the structured summary draft and check the
+                        available review information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">06</div>
+                <div>
+                    <h3>Doctor Review</h3>
+                    <p>
+                        The doctor reviews the information and records
+                        professional observations.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SUPPORT -->
+    <section class="section support-section" id="contact">
+        <div class="section-heading">
+            <h2>Contact Support</h2>
+            <p>Having a technical issue? Describe it below.</p>
+        </div>
+
+        <form id="supportForm">
+
+            <div class="form-group">
+                <label for="supportName">Your Name *</label>
+                <input
+                    type="text"
+                    id="supportName"
+                    placeholder="Enter your name"
+                    required
+                    maxlength="80"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="supportEmail">Email Address *</label>
+                <input
+                    type="email"
+                    id="supportEmail"
+                    placeholder="Enter your email address"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="supportCategory">Issue Category *</label>
+                <select id="supportCategory" required>
+                    <option value="">Select an issue</option>
+                    <option value="Registration">Registration</option>
+                    <option value="Medical History">Medical History</option>
+                    <option value="Document Upload">Document Upload</option>
+                    <option value="AI Health Assistant">AI Health Assistant</option>
+                    <option value="Medical Summary">Medical Summary</option>
+                    <option value="Technical Issue">Technical Issue</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="supportMessage">Describe Your Issue *</label>
+                <textarea
+                    id="supportMessage"
+                    rows="5"
+                    placeholder="Explain the problem you are facing..."
+                    required
+                    maxlength="1000"
+                ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Support Request
+            </button>
+
+        </form>
+
+        <div id="supportSuccess" class="success-message hidden">
+            <h3>Thank you!</h3>
+            <p id="successText">
+                Your demonstration request has been validated.
+            </p>
+        </div>
+
+        <div class="demo-notice">
+            <strong>Frontend demonstration:</strong>
+            This form does not send emails, create support tickets or save
+            your information. A backend support API will be needed for
+            actual submissions.
+        </div>
+    </section>
+
+    <!-- PRIVACY AND SAFETY -->
+    <section class="privacy-box">
+        <h2>🔒 Privacy and Safety</h2>
+        <ul>
+            <li>Provide accurate information when using the system.</li>
+            <li>Do not share your login credentials with anyone.</li>
+            <li>AI-generated medical summaries must be verified by a doctor.</li>
+            <li>Do not use this demonstration for medical emergencies.</li>
+            <li>For urgent medical help, contact local emergency services
+                or visit the nearest hospital.</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 MediKiosk. All rights reserved.</p>
+    <p>Patient Case History Management System</p>
+</footer>
+
+<script src="help.js"></script>
+</body>
+</html>
