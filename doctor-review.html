@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediKiosk | Doctor Review</title>
+    <link rel="stylesheet" href="doctor-review.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Medi<span>Kiosk</span></div>
+    <a href="dashboard.html" class="back-btn">← Dashboard</a>
+</header>
+
+<main class="container">
+
+    <section class="page-heading">
+        <h1>Doctor Review</h1>
+        <p>Review patient information and provide professional observations.</p>
+        <span class="demo-label">Frontend Demonstration – Sample Patient Data</span>
+    </section>
+
+    <section class="card">
+        <div class="section-heading">
+            <h2>Patient Information</h2>
+            <span class="status pending">Pending Review</span>
+        </div>
+
+        <div class="details-grid">
+            <div><small>Patient Name</small><strong>Sample Patient</strong></div>
+            <div><small>Patient ID</small><strong>MK-DEMO-001</strong></div>
+            <div><small>Age</small><strong>25 years</strong></div>
+            <div><small>Gender</small><strong>Not specified</strong></div>
+            <div><small>Preferred Language</small><strong>English</strong></div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Medical History</h2>
+
+        <div class="info-block">
+            <h3>Current Symptoms</h3>
+            <p>Headache and mild fever</p>
+        </div>
+
+        <div class="info-block">
+            <h3>Symptom Duration</h3>
+            <p>2 days</p>
+        </div>
+
+        <div class="info-block">
+            <h3>Severity</h3>
+            <p>Moderate</p>
+        </div>
+
+        <div class="info-block">
+            <h3>Past Medical Conditions</h3>
+            <p>No conditions reported in this sample.</p>
+        </div>
+
+        <div class="info-block">
+            <h3>Surgeries</h3>
+            <p>No surgeries reported in this sample.</p>
+        </div>
+
+        <div class="info-block">
+            <h3>Current Medications</h3>
+            <p>Not provided in this sample.</p>
+        </div>
+
+        <div class="info-block">
+            <h3>Allergies</h3>
+            <p>Not provided in this sample.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Uploaded Medical Documents</h2>
+
+        <div class="document-item">
+            <span>📄 Blood_Test_Report.pdf</span>
+            <span class="file-tag">Sample</span>
+        </div>
+
+        <div class="document-item">
+            <span>🖼 Prescription.jpg</span>
+            <span class="file-tag">Sample</span>
+        </div>
+
+        <p class="note">
+            These are demonstration filenames, not actual uploaded medical files.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>AI-Generated Medical Summary</h2>
+
+        <div class="ai-box">
+            <span class="ai-label">AI Summary Draft – Sample</span>
+            <p>
+                The sample patient reports headache and mild fever
+                for approximately two days. The reported symptom
+                severity is moderate. Past medical conditions and
+                surgeries are marked as not reported in this sample.
+                Medication and allergy information requires verification.
+            </p>
+        </div>
+
+        <p class="note">
+            This is illustrative text, not an actual AI-generated
+            clinical assessment. The doctor must independently verify
+            all patient information.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Doctor's Review</h2>
+
+        <form id="doctorReviewForm">
+
+            <label for="doctorName">Doctor's Name *</label>
+            <input
+                type="text"
+                id="doctorName"
+                placeholder="Enter doctor's name"
+                required
+            >
+
+            <label for="observations">Doctor's Observations *</label>
+            <textarea
+                id="observations"
+                rows="5"
+                placeholder="Enter observations after reviewing the patient information..."
+                required
+            ></textarea>
+
+            <label for="decision">Review Decision *</label>
+            <select id="decision" required>
+                <option value="">Select decision</option>
+                <option value="Approved">Approved</option>
+                <option value="Correction Required">Correction Required</option>
+                <option value="Further Information Required">
+                    Further Information Required
+                </option>
+            </select>
+
+            <button type="submit" class="submit-btn">
+                Save Doctor Review
+            </button>
+
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+            <h3>Review Updated Successfully!</h3>
+            <p id="savedDoctor"></p>
+            <p id="savedDecision"></p>
+            <p id="savedObservations"></p>
+            <span id="finalStatus" class="status"></span>
+        </div>
+
+    </section>
+
+    <p class="disclaimer">
+        Demonstration only. This page does not save records to a
+        database or represent a real clinical approval.
+    </p>
+
+</main>
+
+<script src="doctor-review.js"></script>
+</body>
+</html>
