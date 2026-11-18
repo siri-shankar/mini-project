@@ -31,6 +31,9 @@ serviceButtons.forEach(button => {
         else if (serviceName === "AI Health Assistant") {
             window.location.href = "assistant.html";
         }
+        else if (serviceName === "Medical Summary") {
+            window.location.href = "summary.html";
+        }
         else {
             showMessage(
                 serviceName +

@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Summary | MediKiosk</title>
+    <link rel="stylesheet" href="summary.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="dashboard.html" class="logo">Medi<span>Kiosk</span></a>
+    <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+</header>
+
+<main class="container">
+
+    <section class="page-heading">
+        <span class="tag">PATIENT HEALTH RECORD</span>
+        <h1>Medical Summary</h1>
+        <p>View and review the patient's collected health information.</p>
+    </section>
+
+    <div class="demo-banner">
+        <strong>Demo information:</strong>
+        The details displayed below are sample data. They are not taken
+        from a real patient or saved medical record.
+    </div>
+
+    <section class="patient-card">
+        <div class="patient-avatar">P</div>
+        <div class="patient-details">
+            <h2>Patient Name</h2>
+            <p>Patient ID: MK-DEMO-001</p>
+            <div class="patient-meta">
+                <span>Age: 25 years</span>
+                <span>Gender: Not specified</span>
+                <span>Language: English</span>
+            </div>
+        </div>
+        <span class="status-badge">Demo Record</span>
+    </section>
+
+    <section class="summary-grid">
+
+        <article class="summary-card">
+            <div class="card-heading">
+                <span class="card-icon">🩺</span>
+                <h3>Current Symptoms</h3>
+            </div>
+            <p class="detail-label">Reported symptoms</p>
+            <p>Headache and mild fever</p>
+            <p class="detail-label">Duration</p>
+            <p>2 days</p>
+            <p class="detail-label">Severity</p>
+            <span class="severity">Moderate</span>
+        </article>
+
+        <article class="summary-card">
+            <div class="card-heading">
+                <span class="card-icon">📋</span>
+                <h3>Medical History</h3>
+            </div>
+            <p class="detail-label">Existing conditions</p>
+            <p>None reported in this sample</p>
+            <p class="detail-label">Previous surgeries</p>
+            <p>None reported in this sample</p>
+        </article>
+
+        <article class="summary-card">
+            <div class="card-heading">
+                <span class="card-icon">💊</span>
+                <h3>Medications</h3>
+            </div>
+            <p class="detail-label">Current medicines</p>
+            <p>Not provided in this sample</p>
+        </article>
+
+        <article class="summary-card">
+            <div class="card-heading">
+                <span class="card-icon">⚠️</span>
+                <h3>Allergies</h3>
+            </div>
+            <p class="detail-label">Known allergies</p>
+            <p>Not provided in this sample</p>
+        </article>
+
+    </section>
+
+    <section class="section-card">
+        <div class="section-title">
+            <div>
+                <h2>Uploaded Medical Documents</h2>
+                <p>Documents listed in this sample record</p>
+            </div>
+            <span class="count-badge">2 Documents</span>
+        </div>
+
+        <div class="document-row">
+            <div class="document-icon">📄</div>
+            <div class="document-info">
+                <strong>Blood_Test_Report.pdf</strong>
+                <p>Blood Test Report · Sample document</p>
+            </div>
+            <span class="file-label">PDF</span>
+        </div>
+
+        <div class="document-row">
+            <div class="document-icon">🖼️</div>
+            <div class="document-info">
+                <strong>Prescription.jpg</strong>
+                <p>Prescription · Sample document</p>
+            </div>
+            <span class="file-label">JPG</span>
+        </div>
+    </section>
+
+    <section class="section-card ai-card">
+        <div class="section-title">
+            <div>
+                <span class="ai-tag">AI MODULE PREVIEW</span>
+                <h2>Structured Medical Summary</h2>
+                <p>Draft format for future AI-generated summaries</p>
+            </div>
+            <span class="draft-badge">Draft</span>
+        </div>
+
+        <div class="ai-summary">
+            <h3>Presenting Complaint</h3>
+            <p>
+                The sample patient reports headache and mild fever
+                for a duration of two days.
+            </p>
+
+            <h3>Relevant Medical History</h3>
+            <p>
+                No existing medical conditions or previous surgeries
+                are reported in this sample record.
+            </p>
+
+            <h3>Medication and Allergy Information</h3>
+            <p>
+                Medication and allergy details have not been provided
+                in this sample.
+            </p>
+
+            <h3>Documents Available</h3>
+            <p>
+                One sample blood test report and one sample prescription
+                are listed above.
+            </p>
+        </div>
+
+        <p class="ai-disclaimer">
+            This is demonstration text, not an actual AI-generated
+            medical assessment. It must not be used for diagnosis
+            or treatment.
+        </p>
+    </section>
+
+    <section class="section-card doctor-card">
+        <div class="section-title">
+            <div>
+                <h2>Doctor Review</h2>
+                <p>Clinical review and approval status</p>
+            </div>
+            <span id="reviewStatus" class="pending-badge">Pending Review</span>
+        </div>
+
+        <div class="review-info">
+            <p><strong>Reviewed by:</strong> Not assigned</p>
+            <p><strong>Review date:</strong> Not available</p>
+        </div>
+
+        <label for="doctorNotes">Doctor's Notes (Demo)</label>
+        <textarea
+            id="doctorNotes"
+            rows="4"
+            placeholder="Doctor's notes can be entered here...">
+        </textarea>
+
+        <button id="markReviewedButton" class="review-btn" type="button">
+            Mark as Reviewed (Demo)
+        </button>
+
+        <p id="reviewMessage" class="review-message" aria-live="polite"></p>
+    </section>
+
+    <div class="bottom-actions">
+        <button id="printButton" class="print-btn" type="button">
+            🖨 Print Summary
+        </button>
+
+        <a href="dashboard.html" class="dashboard-btn">
+            Return to Dashboard
+        </a>
+    </div>
+
+    <p class="safety-note">
+        Medical information must be checked by a qualified healthcare
+        professional. AI-generated content is only a draft and must
+        never replace clinical judgement.
+    </p>
+
+</main>
+
+<script src="summary.js"></script>
+</body>
+</html>
