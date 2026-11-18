@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Medical Documents | MediKiosk</title>
+    <link rel="stylesheet" href="documents.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="dashboard.html" class="logo">Medi<span>Kiosk</span></a>
+        <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+    </header>
+
+    <main class="container">
+
+        <section class="page-heading">
+            <span class="tag">PATIENT DOCUMENTS</span>
+            <h1>Upload Medical Documents</h1>
+            <p>
+                Upload your previous medical reports and prescriptions
+                to help maintain your medical history in one place.
+            </p>
+        </section>
+
+        <section class="upload-card">
+
+            <div class="section-heading">
+                <h2>Document Information</h2>
+                <p>Select the type of document you want to upload.</p>
+            </div>
+
+            <form id="documentForm">
+
+                <div class="form-group">
+                    <label for="documentType">Document Type <span>*</span></label>
+
+                    <select id="documentType" required>
+                        <option value="">Select document type</option>
+                        <option value="Prescription">Prescription</option>
+                        <option value="Blood Test Report">Blood Test Report</option>
+                        <option value="Laboratory Report">Laboratory Report</option>
+                        <option value="X-ray Report">X-ray Report</option>
+                        <option value="Scan Report">Scan Report</option>
+                        <option value="Discharge Summary">Discharge Summary</option>
+                        <option value="Previous Medical Record">Previous Medical Record</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="documentDate">Document Date (Optional)</label>
+                    <input type="date" id="documentDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="documentDescription">Description (Optional)</label>
+                    <textarea
+                        id="documentDescription"
+                        rows="3"
+                        maxlength="300"
+                        placeholder="Example: Blood test report taken last month">
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Choose Your Files <span>*</span></label>
+
+                    <div class="drop-area" id="dropArea">
+                        <div class="upload-icon">☁️</div>
+                        <h3>Drag and drop your files here</h3>
+                        <p>or</p>
+
+                        <label for="documentFiles" class="browse-btn">
+                            Browse Files
+                        </label>
+
+                        <input
+                            type="file"
+                            id="documentFiles"
+                            accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+                            multiple
+                            hidden
+                        >
+
+                        <p class="file-info">
+                            Supported formats: PDF, JPG, JPEG, PNG
+                        </p>
+                        <p class="file-info">
+                            Maximum 5 files, 10 MB per file
+                        </p>
+                    </div>
+                </div>
+
+                <div class="selected-files-section">
+                    <h3>Selected Documents</h3>
+                    <div id="fileList" class="file-list">
+                        <p class="empty-message">No files selected yet.</p>
+                    </div>
+                </div>
+
+                <div class="consent-box">
+                    <input type="checkbox" id="documentConsent" required>
+                    <label for="documentConsent">
+                        I confirm that these documents belong to me or that
+                        I am authorised to upload them. I consent to their
+                        use for my medical history.
+                    </label>
+                </div>
+
+                <p class="privacy-note">
+                    🔒 Your medical documents are sensitive information.
+                    Use only sample documents while testing this demo.
+                </p>
+
+                <button type="submit" class="submit-btn">
+                    Upload Documents →
+                </button>
+
+            </form>
+
+            <div id="successMessage" class="success-message" hidden>
+                <div class="success-icon">✓</div>
+                <h2>Documents Selected Successfully!</h2>
+                <p id="successText">
+                    Your documents have passed the frontend checks.
+                </p>
+                <p class="demo-note">
+                    This is a frontend demonstration. Files are not yet
+                    uploaded to a server or saved in a database.
+                </p>
+                <a href="dashboard.html" class="dashboard-btn">
+                    Return to Dashboard
+                </a>
+            </div>
+
+        </section>
+
+        <p class="emergency-note">
+            This page is only for uploading medical records. For a medical
+            emergency, seek immediate medical assistance.
+        </p>
+
+    </main>
+
+    <script src="documents.js"></script>
+</body>
+</html>

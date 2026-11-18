@@ -15,28 +15,28 @@ function showMessage(message) {
 
 // Handle service buttons
 // Handle service buttons
+
 serviceButtons.forEach(button => {
-
     button.addEventListener("click", function () {
-
         const serviceName = this.dataset.service;
 
         if (serviceName === "Medical History") {
-
             window.location.href = "history.html";
-
-        } else {
-
+        }
+        else if (serviceName === "Upload Documents" ||
+                 serviceName === "Upload Medical Documents"
+        ) {
+            window.location.href = "documents.html";
+        }
+        else {
             showMessage(
                 serviceName +
                 " will be available after we build and connect this module."
             );
-
         }
-
     });
-
 });
+
 
 // Logout button
 logoutBtn.addEventListener("click", function () {
