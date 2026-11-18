@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant | MediKiosk</title>
+    <link rel="stylesheet" href="assistant.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="dashboard.html" class="logo">Medi<span>Kiosk</span></a>
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+</header>
+
+<main class="container">
+
+    <section class="heading">
+        <span class="tag">PATIENT CASE-TAKING</span>
+        <h1>AI Health Assistant</h1>
+        <p>
+            Tell us about your health through a simple conversation.
+            We will organize your answers into a medical history draft.
+        </p>
+    </section>
+
+    <section class="chat-card">
+
+        <div class="chat-header">
+            <div class="assistant-avatar">✚</div>
+
+            <div>
+                <h2>MediKiosk Health Assistant</h2>
+                <p><span class="online-dot"></span> Patient information collection</p>
+            </div>
+        </div>
+
+        <div class="language-area">
+            <label for="languageSelect">Conversation Language</label>
+
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="kn">Kannada</option>
+                <option value="hi">Hindi</option>
+            </select>
+        </div>
+
+        <div class="progress-area">
+            <div class="progress-info">
+                <span id="progressText">Question 1 of 6</span>
+                <span id="progressPercent">0%</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages" aria-live="polite">
+
+            <div class="message bot-message">
+                <div class="message-avatar">✚</div>
+
+                <div class="message-content">
+                    <p>
+                        Hello! Welcome to MediKiosk.
+                        I will ask you a few questions to understand
+                        your health concerns.
+                    </p>
+                    <span class="message-time">Health Assistant</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-area" id="inputArea">
+
+            <textarea
+                id="userInput"
+                rows="2"
+                placeholder="Type your answer here..."
+                aria-label="Your answer">
+            </textarea>
+
+            <button id="sendButton" type="button">
+                Send →
+            </button>
+
+        </div>
+
+        <div class="chat-footer">
+            Please provide accurate information. You can review
+            your answers before confirming them.
+        </div>
+
+        <div class="review-section" id="reviewSection" hidden>
+
+            <h2>Review Your Health Information</h2>
+
+            <p class="review-description">
+                Please check your answers carefully before confirming.
+            </p>
+
+            <div id="reviewContent" class="review-content"></div>
+
+            <div class="review-buttons">
+                <button id="editButton" class="edit-btn" type="button">
+                    Edit Answers
+                </button>
+
+                <button id="confirmButton" class="confirm-btn" type="button">
+                    Confirm Answers
+                </button>
+            </div>
+
+        </div>
+
+        <div id="successSection" class="success-section" hidden>
+
+            <div class="success-icon">✓</div>
+
+            <h2>Information Collected Successfully!</h2>
+
+            <p>
+                Your health information has been organized into a
+                draft for further review.
+            </p>
+
+            <div class="demo-warning">
+                This is a frontend demonstration. Your answers have
+                not been saved to a database or sent to an AI model.
+            </div>
+
+            <a href="dashboard.html" class="dashboard-btn">
+                Return to Dashboard
+            </a>
+
+        </div>
+
+    </section>
+
+    <div class="notice">
+        <strong>Medical Safety Notice:</strong>
+        This assistant only collects health information. It does not
+        provide medical diagnosis or treatment. If you are experiencing
+        a medical emergency, seek immediate medical assistance.
+    </div>
+
+</main>
+
+<script src="assistant.js"></script>
+
+</body>
+</html>
