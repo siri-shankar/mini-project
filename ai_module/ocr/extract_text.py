@@ -1,50 +1,94 @@
 import pytesseract
-from PIL import Image, ImageOps, ImageEnhance
+from PIL import Image, ImageEnhance, ImageOps, ImageFilter
+from pathlib import Path
 
-# Location of Tesseract OCR
+# Tesseract installation path
 pytesseract.pytesseract.tesseract_cmd = (
     r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 )
 
 
-def extract_text(image_path, lang="eng+kan+hin"):
-    # Open image
-    image = Image.open(image_path)
+def extract_text(image_path, lang="kan"):
+    # Open original image
+    image = Image.open(image_path).convert("RGB")
 
     # Convert to grayscale
-    image = image.convert("L")
-
-    # Check whether background is dark
-    # Tesseract generally works better with dark text on white
-    image = ImageOps.invert(image)
+    gray = ImageOps.grayscale(image)
 
     # Increase image size
-    image = image.resize(
-        (image.width * 2, image.height * 2),
+    gray = gray.resize(
+        (gray.width * 3, gray.height * 3),
         Image.Resampling.LANCZOS
     )
 
-    # Improve contrast
-    image = ImageEnhance.Contrast(image).enhance(1.2)
-    image.save("ai_module/ocr/processed_kannada.png")
+    # Improve contrast slightly
+    gray = ImageEnhance.Contrast(gray).enhance(1.3)
 
-    # Extract text
-    text = pytesseract.image_to_string(
+    # Improve sharpness
+    gray = gray.filter(ImageFilter.SHARPEN)
+
+    # Try OCR on both original and processed images
+    original_text = pytesseract.image_to_string(
         image,
         lang=lang,
-        config="--oem 1 --psm 3"
+        config="--oem 1 --psm 7"
     )
 
-    return text
+    processed_text = pytesseract.image_to_string(
+        gray,
+        lang=lang,
+        config="--oem 1 --psm 7"
+    )
+
+    # Select the result with more recognized characters
+    text = max(
+        [original_text, processed_text],
+        key=lambda x: len(x.strip())
+    )
+
+    # Try to recognize the first line separately
+    top_height = max(1, gray.height // 3)
+    name_area = gray.crop(
+        (0, 0, gray.width, gray.height//5)
+    )
+
+    name_text = pytesseract.image_to_string(
+        name_area,
+        lang=lang,
+        config="--oem 1 --psm 6"
+    ).strip()
+
+    # Add the name line only if it appears missing
+    # and the separate OCR result looks like a name field
+    if (
+        name_text
+        and ("ಹೆಸರು" in name_text or "ರೋಗಿಯ" in name_text)
+        and "ಹೆಸರು" not in text
+    ):
+        text = name_text + "\n" + text
+
+    return text.strip()
 
 
 if __name__ == "__main__":
 
-    # Kannada medical report
-    image_path = "ai_module/ocr/kannada_report.png"
+    # Kannada medical report image
+    image_path = Path(
+        "ai_module/ocr/kannada_report.png"
+    )
 
-    # Test Kannada separately first
-    text = extract_text(image_path, lang="kan")
+    if not image_path.exists():
+        print("Image not found:", image_path)
 
-    print("Extracted Medical Report:")
-    print(text)
+    else:
+        text = extract_text(image_path, lang="kan")
+
+        print("\nExtracted Medical Report:\n")
+
+        if text:
+            for line in text.splitlines():
+                if line.strip():
+                    print(line.strip())
+                    print()
+        else:
+            print("No text detected.")
